@@ -56,45 +56,45 @@ Go to Systems (dropdown) > Commerce
 
 Create 2 in-world items: 
 - 3SuperJumps | short description | 25 meta credits | Consumable | Auto use = Enabled
-<img width="511" height="519" alt="image" src="https://github.com/user-attachments/assets/94f6a509-e104-4a44-a2b1-e1f08b9aa2a2" />
+<img width="511" height="519" alt="image" src="images/02.png" />
 
 - unlockSpeed | short description | 25 meta credits | Durable
-<img width="506" height="517" alt="image" src="https://github.com/user-attachments/assets/58b7a8b8-bb78-4d62-8438-8a6c89659200" />
+<img width="506" height="517" alt="image" src="images/03.png" />
 
 
 ### Step 2 - Create PPV Variable
 Got to Systems (dropdown) > Variable Groups
 
-<img width="186" height="181" alt="image" src="https://github.com/user-attachments/assets/2d4dd7cf-c9f3-4766-a7c6-0aae92babca0" />
+<img width="186" height="181" alt="image" src="images/04.png" />
 
 Create "+" a variable group called **IWP** 
 
-<img width="338" height="151" alt="image" src="https://github.com/user-attachments/assets/e921ea8e-09c9-4e78-acde-4452cb4071b7" />
+<img width="338" height="151" alt="image" src="images/05.png" />
 
 Create "+" a PPV called **JumpsRemaining**
 
-<img width="305" height="177" alt="image" src="https://github.com/user-attachments/assets/c93257f7-55db-49e4-b640-7e44517ded79" />
+<img width="305" height="177" alt="image" src="images/06.png" />
 
 ### 1st Gotcha - Restart World
 Leave the world (shutdown server) and return. 
 This ensures the variables are initiated into your world.
 
-<img width="183" height="137" alt="image" src="https://github.com/user-attachments/assets/1e82b352-212f-445f-a15f-0718e1bda5c8" />
+<img width="183" height="137" alt="image" src="images/07.png" />
 
 ### Step 3 - IWP Gizmo
 Go to Build (dropdown) > Gizmos and place **In-world Purchase** Gizmo. 
 
-<img width="63" height="101" alt="image" src="https://github.com/user-attachments/assets/229a8157-9d80-488c-b8f6-a4a1e99aabd4" />
+<img width="63" height="101" alt="image" src="images/08.png" />
 
 Add a platform shape for visual clarity of Gizmo location. 
 
-<img width="276" height="243" alt="image" src="https://github.com/user-attachments/assets/85e7eccb-5332-4b51-a17f-559e0e84a52f" />
+<img width="276" height="243" alt="image" src="images/09.png" />
 
 Name Gizmo: "IWPSeller 3SuperJumps"
 
 In the Gizmo Properties/Behavior: In-world Item = 3SuperJumps | UI Property = Icon
 
-<img width="299" height="139" alt="image" src="https://github.com/user-attachments/assets/7c63f17c-3023-415f-91cf-16d26b21b922" />
+<img width="299" height="139" alt="image" src="images/10.png" />
 
 Duplicate Gizmo and rename: "IWPSeller UnlockSpeed"
 
@@ -110,11 +110,11 @@ Create script: "IWP_Manager"
 
 Apply PlayerSkills_Local.ts to a new Empty Object renamed to: "PlayerSkills_Local"
 
-<img width="452" height="419" alt="image" src="https://github.com/user-attachments/assets/e6bf53d1-75e0-4c0b-989c-d521920cd891" />
+<img width="452" height="419" alt="image" src="images/11.png" />
 
 Add a tag: "PlayerSkills"
 
-<img width="297" height="112" alt="image" src="https://github.com/user-attachments/assets/b46e57c6-73a3-4ef6-a038-d0fd36858f48" />
+<img width="297" height="112" alt="image" src="images/12.png" />
 
 Apply IWP_Manager.ts to a new Empty Object renamed to: "IWP_Manager"
 
@@ -400,13 +400,13 @@ That's important when 'getting' and 'setting' PPV values.
 
 Next, we need to get the **SKU** values for our In-world Items. 
 
-<img width="575" height="68" alt="image" src="https://github.com/user-attachments/assets/d2e4089f-4238-4815-ab71-ad2a6572500b" />
+<img width="575" height="68" alt="image" src="images/13.png" />
 
 Navigate to the Systems (dropdown) > Commerce
 
 Find the **Copy SKU** button for **3SuperJumps**
 
-<img width="307" height="236" alt="image" src="https://github.com/user-attachments/assets/e9715dda-0813-4144-9fd7-184dc5beef7a" />
+<img width="307" height="236" alt="image" src="images/14.png" />
 
 Paste the value into (ln 6) **SKU_addJumps** = "paste here"
 
@@ -418,7 +418,7 @@ On (ln 19) we see an event for **OnItemPurchaseComplete**. This is how we can de
 
 On (ln 29) we see an event for **OnItemConsumeComplete**. Auto-consumed items will trigger Purchase and Consume Events automatically in that order. 
 
-<img width="1149" height="458" alt="image" src="https://github.com/user-attachments/assets/ca20ffd7-4e92-4041-8290-47c936a49b68" />
+<img width="1149" height="458" alt="image" src="images/15.png" />
 
 Take a look at the video and the code comments for a better understanding of the scripts.
 
@@ -426,11 +426,11 @@ Take a look at the video and the code comments for a better understanding of the
 
 On the PlayerSkills_Local Object > Properties/Script PropsDefinition: AutoAssignOwner = **Enable** . 
 
-<img width="186" height="42" alt="image" src="https://github.com/user-attachments/assets/2615de64-ef0e-4f6c-9fd3-c162952470d5" />
+<img width="186" height="42" alt="image" src="images/16.png" />
 
 AutoAssignOwner is a developer hack to easily assign Local ownership to the player during development. Local ownership of the PlayerSkills_Local Entity allows the script to access and edit player jump power and player speed. This is, however, not a final solution. We will turn this feature off when we create an asset from the PlayerSkills_Local object to use with the Asset Pool Gizmo. 
 
-<img width="1042" height="185" alt="image" src="https://github.com/user-attachments/assets/a8fcbcbc-4a93-4cdb-9df6-61a0aaaf65d7" />
+<img width="1042" height="185" alt="image" src="images/17.png" />
 
 ### Step 9 - Quick Jump Test
 
@@ -438,7 +438,7 @@ We want to test the player's jumps.
 
 Go to Systems (dropdown) > Variable Groups > IWP > Debug Values (wrench/gear icon) and **change value to 3**
 
-<img width="314" height="231" alt="image" src="https://github.com/user-attachments/assets/f5b814a4-d63b-4f2a-ba0e-1da67d174386" />
+<img width="314" height="231" alt="image" src="images/18.png" />
 
 Open the **Console** tab, **Press Play**, and **Jump 4 times**. 
 
@@ -454,19 +454,19 @@ First, we'll want to see logs. However, we have no way of seeing logs on our mob
 
 Dun duh duh dah! **Debug Gizmo!** Go to Build (dropdown) > Gizmos and Find, Place, and Resize the Debug Gizmo. 
 
-<img width="314" height="231" alt="image" src="https://github.com/user-attachments/assets/fbb23de0-49b6-4b1c-a582-9424f18a0d45" />
+<img width="314" height="231" alt="image" src="images/19.png" />
 
 In the **Properties/ Behavior** change Visibility = In Published World
 
-<img width="302" height="59" alt="image" src="https://github.com/user-attachments/assets/905f1f6b-9678-4370-954e-4215646dd2df" />
+<img width="302" height="59" alt="image" src="images/20.png" />
 
 Next, go to the **three vertical dot** button next to the Play button > Preview Actions and select the middle: Send Preview build link to the Meta Horizon mobile app. 
 
-<img width="510" height="407" alt="image" src="https://github.com/user-attachments/assets/bde91308-c86b-4777-ac58-e9447c8663c7" />
+<img width="510" height="407" alt="image" src="images/21.png" />
 
 Open Horizon World app on your phone and test the Jump and Speed purchase!
 
-<img width="787" height="153" alt="image" src="https://github.com/user-attachments/assets/40309f05-ac1b-4638-8b7a-3f6a1f76c085" />
+<img width="787" height="153" alt="image" src="images/22.png" />
 
 ### Step 11 - Deleting purchases
 
@@ -474,11 +474,11 @@ To delete the **Durable** purchase we need to go to the Desktop App.
 
 Go to the **three vertical dot** button next to the Play button > Preview Actions and select the first: Open preview build in browser. 
 
-<img width="402" height="404" alt="image" src="https://github.com/user-attachments/assets/f4b4ddbc-0e32-4ae8-a972-2374de8fc8a2" />
+<img width="402" height="404" alt="image" src="images/23.png" />
 
 Press Tab to open the menu, find the **backpack icon** on the left window, select the **In-world Items** tab, select the **info** button, and finally use the **trash can** to delete the purchase. 
 
-<img width="752" height="455" alt="image" src="https://github.com/user-attachments/assets/1b12ae6d-ecc8-413a-b3e6-3ae3076575e9" />
+<img width="752" height="455" alt="image" src="images/24.png" />
 
 ## Step 12 - Create Asset and Asset Pool Gizmo
 
@@ -486,15 +486,15 @@ We're going to turn the **PlayerSkills_Local** object into an asset.
 
 **First! Disable the AutoAssignOwner toggle!**
 
-<img width="112" height="26" alt="image" src="https://github.com/user-attachments/assets/3d6c7bb2-65a6-4698-a36d-b887f6420ebc" />
+<img width="112" height="26" alt="image" src="images/25.png" />
 
 Then *right-click* > Create Asset. Keep the name. Remember where you save it. Then *delete* the object from the Heirarchy. 
 
-<img width="281" height="247" alt="image" src="https://github.com/user-attachments/assets/058def44-0968-46bf-b18e-d23b76f6a838" />
+<img width="281" height="247" alt="image" src="images/26.png" />
 
 Next, go to Build > Gizmos > Asset Pool and place one. 
 
-<img width="63" height="81" alt="image" src="https://github.com/user-attachments/assets/8e5eb535-22e8-4ed0-a582-be23aee63947" />
+<img width="63" height="81" alt="image" src="images/27.png" />
 
 Rename to PlayerSkills Asset Pool and then move your attention to the Properties Panel/ Behavior/ Asset Reference. 
 
@@ -515,6 +515,6 @@ I had a lot of fun making this tutorial and I'm glad you made it the whole way!
 
 Hope it was helpful and I'll check you later! 
 
-<img width="491" height="465" alt="image" src="https://github.com/user-attachments/assets/9a943bf3-dffa-4c87-87dd-3581fa9eed45" />
+<img width="491" height="465" alt="image" src="images/28.png" />
 
 -uRocketLife
