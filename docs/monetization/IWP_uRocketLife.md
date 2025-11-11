@@ -52,7 +52,7 @@ In the Worlds Desktop Editor, created a new world.
 
 Go to Systems (dropdown) > Commerce
 
-<img width="344" height="177" alt="image" src="https://github.com/user-attachments/assets/2982e3b9-3644-454c-a08d-7086247b419f" />
+<img width="344" height="177" alt="image" src="images/01.png" />
 
 Create 2 in-world items: 
 - 3SuperJumps | short description | 25 meta credits | Consumable | Auto use = Enabled
